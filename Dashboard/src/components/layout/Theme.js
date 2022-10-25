@@ -1,11 +1,9 @@
 import React from 'react'
+import useTheme from '../../hooks/useTheme'
 
 const Theme = ({ children }) => {
-  if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
+  const isDark = useTheme()
+  if (isDark) {
     document.documentElement.classList.add('dark')
   } else {
     document.documentElement.classList.remove('dark')

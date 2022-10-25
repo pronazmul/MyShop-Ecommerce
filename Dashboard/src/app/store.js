@@ -10,6 +10,7 @@ import reveiwsReducer from './../features/reviews/reviewsSlice'
 import shipperReducer from './../features/shipper/shipperSlice'
 import supplierReducer from './../features/supplier/supplierSlice'
 import wishlistReducer from './../features/wishlist/wishlistSlice'
+import globalSlice from './../features/global/globalSlice'
 
 export const store = configureStore({
   reducer: {
@@ -24,6 +25,7 @@ export const store = configureStore({
     shipper: shipperReducer,
     supplier: supplierReducer,
     wishlist: wishlistReducer,
+    global: globalSlice,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMIddlewares) =>

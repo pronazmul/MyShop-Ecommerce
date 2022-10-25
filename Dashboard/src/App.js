@@ -4,9 +4,14 @@ import Theme from './components/layout/Theme'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import NotFound from './pages/NotFound'
+import useAuthCheck from './hooks/useAuthCheck'
+import Loader from './components/ui/Loader'
 
 const App = () => {
-  return (
+  const authCheck = useAuthCheck()
+  return !authCheck ? (
+    <Loader />
+  ) : (
     <Theme>
       <Router>
         <Routes>

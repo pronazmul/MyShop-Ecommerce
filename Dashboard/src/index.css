@@ -428,6 +428,7 @@ body.is-monochrome:before {
   position: absolute;
   width: 100%;
 }
+
 .dark .app-preloader .app-preloader-inner:after,
 .dark .app-preloader .app-preloader-inner:before {
   background-color: rgba(105, 122, 155, 0.5);
@@ -537,7 +538,7 @@ body.is-monochrome:before {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   /* width: calc(var(--main-sidebar-width) + var(--sidebar-panel-width)); */
-  width: var(--sidebar-panel-width);
+  width: calc(var(--sidebar-panel-width));
   z-index: 30;
 }
 .dark .sidebar-panel,
@@ -658,7 +659,8 @@ nav.header .header-container {
 }
 @media (min-width: 1280px) {
   .is-sidebar-open nav.header {
-    width: calc(100% - var(--main-sidebar-width) - var(--sidebar-panel-width));
+    /* width: calc(100% - var(--main-sidebar-width) - var(--sidebar-panel-width)); */
+    width: calc(100% - var(--sidebar-panel-width));
   }
 }
 .is-header-blur nav.header .header-container {
@@ -700,9 +702,9 @@ nav.header .header-container {
   }
 }
 @media (min-width: 768px) {
-  .main-content {
+  /* .main-content {
     margin-left: var(--main-sidebar-width);
-  }
+  } */
   .has-min-sidebar .main-content {
     margin-left: calc(
       var(--main-sidebar-width) + var(--sidebar-panel-min-width)
@@ -714,7 +716,8 @@ nav.header .header-container {
 }
 @media (min-width: 1280px) {
   .is-sidebar-open .main-content {
-    margin-left: calc(var(--main-sidebar-width) + var(--sidebar-panel-width));
+    /* margin-left: calc(var(--main-sidebar-width) + var(--sidebar-panel-width)); */
+    margin-left: calc(var(--sidebar-panel-width));
   }
 }
 .h-100vh {
@@ -2302,11 +2305,7 @@ code.inline-code {
 .tippy-box[data-theme~='light'] > .tippy-svg-arrow svg {
   color: #e9eef5;
 }
-/*!
- * FilePond 4.30.4
- * Licensed under MIT, https://opensource.org/licenses/MIT/
- * Please visit https://pqina.nl/filepond/ for details.
- */
+
 .filepond--assistant {
   clip: rect(1px, 1px, 1px, 1px);
   border: 0;
@@ -3167,11 +3166,7 @@ code.inline-code {
   margin-top: 14px;
   top: 0;
 }
-/*!
- * FilePondPluginImagePreview 4.6.11
- * Licensed under MIT, https://opensource.org/licenses/MIT/
- * Please visit https://pqina.nl/filepond/ for details.
- */
+
 .filepond--image-preview-markup {
   left: 0;
   position: absolute;
@@ -16152,8 +16147,8 @@ code.hljs {
   font-family: Font Awesome\6 Brands;
   font-style: normal;
   font-weight: 400;
-  src: url(./assets//fonts/fontawesome/fa-brands-400.woff2) format('woff2'),
-    url(./assets//fonts/fontawesome/fa-brands-400.ttf) format('truetype');
+  src: url(./assets/fonts/fontawesome/fa-brands-400.woff2) format('woff2'),
+    url(./assets/fonts/fontawesome/fa-brands-400.ttf) format('truetype');
 }
 .fa-brands,
 .fab {
@@ -17639,7 +17634,7 @@ code.hljs {
   font-display: block;
   font-family: Font Awesome\5 Free;
   font-weight: 400;
-  src: url(./assets/fonts/fontawesome/fa-brands-400.woff2) format('woff2'),
+  src: url(./assets/fonts/fontawesome/fa-regular-400.woff2) format('woff2'),
     url(./assets/fonts/fontawesome/fa-regular-400.ttf) format('truetype');
 }
 @font-face {
@@ -17657,7 +17652,7 @@ code.hljs {
 @font-face {
   font-display: block;
   font-family: FontAwesome;
-  src: url(./assets/fonts/fontawesome/fa-brands-400.woff2) format('woff2'),
+  src: url(./assets/fonts/fontawesome/fa-regular-400.woff2) format('woff2'),
     url(./assets/fonts/fontawesome/fa-regular-400.ttf) format('truetype');
   unicode-range: u+f003, u+f006, u+f014, u+f016-f017, u+f01a-f01b, u+f01d,
     u+f022, u+f03e, u+f044, u+f046, u+f05c-f05d, u+f06e, u+f070, u+f087-f088,

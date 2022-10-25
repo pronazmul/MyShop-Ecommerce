@@ -1,7 +1,13 @@
 
 
 # dependencies
+
 /Dashboard/node_modules
+/Dashboard/test.html
+/Dashboard/test.js
+/Dashboard/test.css
+
+
 /Frontend/node_modules
 
 

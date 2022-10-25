@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Layout = ({ children }) => {
+const Theme = ({ children }) => {
   if (
     localStorage.theme === 'dark' ||
     (!('theme' in localStorage) &&
@@ -13,4 +13,4 @@ const Layout = ({ children }) => {
   return <>{children}</>
 }
 
-export default Layout
+export default Theme

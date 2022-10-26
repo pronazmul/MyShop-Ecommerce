@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
         sidebarExpanded && 'is-sidebar-open'
       }`}
     >
-      <div className='sidebar print:hidden'>
+      <div className='sidebar print:hidden '>
         <Sidebar />
       </div>
 

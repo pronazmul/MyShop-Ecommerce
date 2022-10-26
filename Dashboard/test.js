@@ -1,52 +1,72 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
-import './index.css'
-
-const Tree = ({ data = [] }) => {
-  return (
-    <div className='d-tree'>
-      <ul className='d-flex d-tree-container flex-column'>
-        {data.map((tree) => (
-          <TreeNode node={tree} />
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-const TreeNode = ({ node }) => {
-  const [childVisible, setChildVisiblity] = useState(false)
-
-  const hasChild = node.children ? true : false
-
-  return (
-    <li className='d-tree-node border-0'>
-      <div className='d-flex' onClick={(e) => setChildVisiblity((v) => !v)}>
-        {hasChild && (
-          <div
-            className={`d-inline d-tree-toggler ${
-              childVisible ? 'active' : ''
-            }`}
-          >
-            <FontAwesomeIcon icon='caret-right' />
-          </div>
-        )}
-
-        <div className='col d-tree-head'>
-          <i className={`mr-1 ${node.icon}`}> </i>
-          {node.label}
-        </div>
-      </div>
-
-      {hasChild && childVisible && (
-        <div className='d-tree-content'>
-          <ul className='d-flex d-tree-container flex-column'>
-            <Tree data={node.children} />
-          </ul>
-        </div>
-      )}
-    </li>
-  )
-}
-
-export default Tree
+export const dashBoardDSidebarLinks = [
+  {
+    id: 1,
+    name: 'Dashboard',
+    sublink: 'dashboard',
+    icon: 'fas fa-tachometer-alt',
+    active: false,
+    nasted: false,
+    subCategory: [],
+  },
+  {
+    id: 2,
+    name: 'Manage Products',
+    sublink: 'all_products',
+    icon: 'fas fa-shopping-cart',
+    active: false,
+    nasted: true,
+    subCategory: [
+      { name: 'All Products', sublink: 'all_products' },
+      { name: 'Add Product', sublink: 'add_product' },
+      { name: 'Out of Stock', sublink: 'out_of_stock' },
+    ],
+  },
+  {
+    id: 3,
+    name: 'Manage Orders',
+    sublink: 'all_orders',
+    icon: 'fas fa-gift',
+    active: false,
+    nasted: true,
+    subCategory: [
+      { name: 'All Orders', sublink: 'all_orders' },
+      { name: 'Cancelled Orders', sublink: 'cancelled_orders' },
+      { name: 'Pending Orders', sublink: 'pending_orders' },
+    ],
+  },
+  {
+    id: 4,
+    name: 'Manage User',
+    sublink: 'all_users',
+    icon: 'fas fa-user-tie',
+    active: false,
+    nasted: true,
+    subCategory: [
+      { name: 'All Users', sublink: 'all_users' },
+      { name: 'Add User', sublink: 'add_user' },
+      { name: 'Suspanded Users', sublink: 'suspanded_users' },
+      { name: 'Pending Requests', sublink: 'pending_requests' },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Manage Customers',
+    sublink: 'all_customers',
+    icon: 'fas fa-users',
+    active: false,
+    nasted: true,
+    subCategory: [
+      { name: 'All Customers', sublink: 'all_customers' },
+      { name: 'Customers Review', sublink: 'customers_review' },
+    ],
+  },
+  {
+    id: 6,
+    name: 'Logout',
+    sublink: 'logout',
+    icon: 'fas fa-power-off',
+    active: false,
+    nasted: false,
+    subCategory: [],
+  },
+]

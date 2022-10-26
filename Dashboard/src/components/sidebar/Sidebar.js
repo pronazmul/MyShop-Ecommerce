@@ -10,9 +10,7 @@ const Sidebar = () => {
         {/* Sidebar Panel Header */}
         <SidebarHeader />
         {/* Sidebar Panel Body */}
-        <div class='h-[calc(100%-4.5rem)] overflow-x-hidden pb-6'>
-          <SidebarList data={sidebarTree} />
-        </div>
+        <SidebarList data={sidebarTree} />
       </div>
     </div>
   )

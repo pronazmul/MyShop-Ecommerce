@@ -1,22 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SidebarList from './SidebarList'
 
 const SidebarListItem = ({ node }) => {
   const [childVisible, setChildVisiblity] = React.useState(false)
-  const hasChild = node.children?.length ? true : false
+  const hasChild = node?.children?.length ? true : false
 
   const [isActive, setIsActive] = React.useState(true)
 
   return (
     <li>
       <Link
+        to={!hasChild ? `/?tab=${node.link}` : ''}
         onClick={() => setChildVisiblity((v) => !v)}
-        class={`flex items-center justify-between py-2 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50 ${
+        class={`flex items-center justify-between py-2.5 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50 ${
           childVisible && 'text-slate-800 font-semibold dark:text-navy-50'
         }`}
       >
-        <span>{node.label}</span>
+        <span className='space-x-2'>
+          <i
+            className={`${node.icon} pr-2 text-primary dark:text-accent-light`}
+          />
+          {node.label}
+        </span>
         {hasChild && (
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -38,7 +43,23 @@ const SidebarListItem = ({ node }) => {
       </Link>
       {hasChild && childVisible && (
         <ul className=''>
-          <SidebarList data={node.children} />
+          {node.children.map((nastedNode) => (
+            <li key={nastedNode.key}>
+              <Link
+                to={`/?tab=${nastedNode.link}`}
+                className={`flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4 ${
+                  isActive
+                    ? 'font-medium text-primary dark:text-accent-light'
+                    : 'text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50'
+                }`}
+              >
+                <div class='flex items-center space-x-2'>
+                  <div class='h-1.5 w-1.5 rounded-full border border-current opacity-40'></div>
+                  <span>{nastedNode.label}</span>
+                </div>
+              </Link>
+            </li>
+          ))}
         </ul>
       )}
     </li>

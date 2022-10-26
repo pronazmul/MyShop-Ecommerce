@@ -1,14 +1,18 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { sidebarToggled } from '../../features/global/globalSlice'
+import AppLogo from './../../assets/images/logos/logo.png'
 
 const SidebarHeader = () => {
   const dispatch = useDispatch()
   return (
     <div class='flex h-18 w-full items-center justify-between pl-4 pr-1'>
-      <p class='text-base tracking-wider text-slate-800 dark:text-navy-100'>
-        DASHBOARD
-      </p>
+      <div className='flex justify-center space-x-4 items-center'>
+        <img className='mx-auto h-12 w-12' src={AppLogo} alt='logo' />
+        <p class='text-base tracking-wider text-slate-800 dark:text-navy-100'>
+          E-Shop
+        </p>
+      </div>
       <button
         onClick={() => dispatch(sidebarToggled())}
         class='btn h-7 w-7 rounded-full p-0 text-primary hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:text-accent-light/80 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 xl:hidden'

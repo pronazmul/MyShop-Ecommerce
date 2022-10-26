@@ -1,16 +1,25 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+import Dashboard from '../components/dashboard/Dashboard'
 import Layout from '../components/layout/Layout'
+import Users from '../components/users/Users'
 
 const HomePage = () => {
-  return (
-    <Layout>
-      <div className='flex items-center space-x-4 py-5 lg:py-6'>
-        <h2 className='text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl'>
-          Welcome to HomePage
-        </h2>
-      </div>
-    </Layout>
-  )
+  const search = useLocation().search
+  const component = new URLSearchParams(search).get('tab')
+
+  const renderSection = (params) => {
+    switch (params) {
+      case 'dashboard':
+        return <Dashboard />
+      case 'all_users':
+        return <Users />
+      default:
+        return <Dashboard />
+    }
+  }
+
+  return <Layout>{renderSection(component)}</Layout>
 }
 
 export default HomePage

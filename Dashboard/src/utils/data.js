@@ -1,3 +1,73 @@
+export const sidebarTree = [
+  {
+    key: '0',
+    label: 'Documents',
+    icon: 'fa fa-folder',
+    title: 'Documents Folder',
+    children: [
+      {
+        key: '0-0',
+        label: 'Document 1-1',
+        icon: 'fa fa-folder',
+        title: 'Documents Folder',
+        children: [
+          {
+            key: '0-1-1',
+            label: 'Document-0-1.doc',
+            icon: 'fa fa-file',
+            title: 'Documents Folder',
+          },
+          {
+            key: '0-1-2',
+            label: 'Document-0-2.doc',
+            icon: 'fa fa-file',
+            title: 'Documents Folder',
+          },
+          {
+            key: '0-1-3',
+            label: 'Document-0-3.doc',
+            icon: 'fa fa-file',
+            title: 'Documents Folder',
+          },
+          {
+            key: '0-1-4',
+            label: 'Document-0-4.doc',
+            icon: 'fa fa-file',
+            title: 'Documents Folder',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: '1',
+    label: 'Desktop',
+    icon: 'fa fa-desktop',
+    title: 'Desktop Folder',
+    children: [
+      {
+        key: '1-0',
+        label: 'document1.doc',
+        icon: 'fa fa-file',
+        title: 'Documents Folder',
+      },
+      {
+        key: '1-1',
+        label: 'documennt-2.doc',
+        icon: 'fa fa-file',
+        title: 'Documents Folder',
+      },
+    ],
+  },
+  {
+    key: '2',
+    label: 'Downloads',
+    icon: 'fa fa-download',
+    title: 'Downloads Folder',
+    children: [],
+  },
+]
+
 export const demoTeams = [
   {
     name: 'design',
@@ -30,104 +100,5 @@ export const demoTeams = [
     assigned: ['nazmul@gmail.com'],
     timestamp: 1664121557,
     id: 4,
-  },
-]
-
-export const demoProjects = [
-  {
-    title: 'Ecommerce Mern Stack Application',
-    team: {
-      id: 1,
-      name: 'development',
-      color: 'green',
-    },
-    creator: {
-      id: 1,
-      name: 'Nazmul Huda',
-      avatar: 'https://avatars.githubusercontent.com/u/490779?v=4',
-    },
-    status: 'backlog',
-    timestamp: 1664125118,
-    id: 1,
-  },
-  {
-    title: 'Realtime Chat Application',
-    team: {
-      id: 1,
-      name: 'design',
-      color: 'green',
-    },
-    creator: {
-      id: 1,
-      name: 'Sumit Saha',
-      avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4',
-    },
-    status: 'ready',
-    timestamp: 1664125200,
-    id: 2,
-  },
-  {
-    title: 'Docotrs Portal',
-    team: {
-      id: 1,
-      name: 'app',
-      color: 'indigo',
-    },
-    creator: {
-      id: 1,
-      name: 'Sumit Saha',
-      avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4',
-    },
-    status: 'backlog',
-    timestamp: 1664125588,
-    id: 3,
-  },
-  {
-    title: 'Wather App',
-    team: {
-      id: 1,
-      name: 'ux/ui',
-      color: 'indigo',
-    },
-    creator: {
-      id: 1,
-      name: 'Sumit Saha',
-      avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4',
-    },
-    status: 'ready',
-    timestamp: 1664125621,
-    id: 4,
-  },
-  {
-    title: 'Online Classroom',
-    team: {
-      id: 1,
-      name: 'development',
-      color: 'indigo',
-    },
-    creator: {
-      id: 1,
-      name: 'Sumit Saha',
-      avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4',
-    },
-    status: 'backlog',
-    timestamp: 1664125671,
-    id: 5,
-  },
-  {
-    title: 'Blog Application',
-    team: {
-      id: 1,
-      name: 'design',
-      color: 'indigo',
-    },
-    creator: {
-      id: 1,
-      name: 'Sumit Saha',
-      avatar: 'https://avatars.githubusercontent.com/u/73503432?v=4',
-    },
-    status: 'backlog',
-    timestamp: 1664125756,
-    id: 6,
   },
 ]

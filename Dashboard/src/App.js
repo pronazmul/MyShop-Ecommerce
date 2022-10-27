@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage'
 import NotFound from './pages/NotFound'
 import useAuthCheck from './hooks/useAuthCheck'
 import Loader from './components/ui/Loader'
+import PrivateRoute from './AuthRoutes/PrivateRoute'
+import PublicRoute from './AuthRoutes/PublicRoute'
 
 const App = () => {
   const authCheck = useAuthCheck()
@@ -15,8 +17,22 @@ const App = () => {
     <Theme>
       <Router>
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/login' element={<LoginPage />} />
+          <Route
+            path='/'
+            element={
+              <PrivateRoute>
+                <HomePage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/login'
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Router>

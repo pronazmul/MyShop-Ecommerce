@@ -15,10 +15,10 @@ export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: async (args, api, extraOptions) => {
     let result = await baseQuery(args, api, extraOptions)
-    if (result?.error?.status === 401) {
-      api.dispatch()
-      localStorage.removeItem('auth')
-    }
+    // if (result?.error?.status === 401) {
+    //   api.dispatch()
+    //   localStorage.removeItem('auth')
+    // }
     return result
   },
   tagTypes: [],

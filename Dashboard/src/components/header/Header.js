@@ -47,7 +47,7 @@ const Header = () => {
               xmlns='http://www.w3.org/2000/svg'
               className='h-5.5 w-5.5 text-slate-500 dark:text-navy-100'
               fill='none'
-              viewbox='0 0 24 24'
+              viewBox='0 0 24 24'
               stroke='currentColor'
               strokeWidth='1.5'
             >

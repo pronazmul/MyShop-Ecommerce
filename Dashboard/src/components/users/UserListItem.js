@@ -2,12 +2,12 @@ import React from 'react'
 
 const UserListItem = ({ user }) => {
   return (
-    <div class='card'>
-      <div class='p-2 text-right'>
-        <button class='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25'>
+    <div className='card'>
+      <div className='p-2 text-right'>
+        <button className='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            class='h-5 w-5'
+            className='h-5 w-5'
             fill='none'
             viewBox='0 0 24 24'
             stroke='currentColor'
@@ -21,31 +21,31 @@ const UserListItem = ({ user }) => {
           </svg>
         </button>
       </div>
-      <div class='flex grow flex-col items-center px-4 pb-5 sm:px-5'>
-        <div class='avatar h-20 w-20'>
-          <img class='rounded-full' src={user.avatar} alt='avatar' />
+      <div className='flex grow flex-col items-center px-4 pb-5 sm:px-5'>
+        <div className='avatar h-20 w-20'>
+          <img className='rounded-full' src={user.avatar} alt='avatar' />
         </div>
-        <h3 class='pt-3 textLg font-medium text-slate-700 dark:text-navy-100'>
+        <h3 className='pt-3 textLg font-medium text-slate-700 dark:text-navy-100'>
           {user?.name}
         </h3>
-        <p class='text-xs+'>
+        <p className='text-xs+'>
           {`${user?.address[0]?.city}, ${user?.address[0]?.country}`}
         </p>
-        <div class='inline-space mt-3 flex grow flex-wrap items-start'>
+        <div className='inline-space mt-3 flex grow flex-wrap items-start'>
           {user.roles.map((role, index) => (
             <p
               key={index}
-              class='tag rounded-full bg-success/10 text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25'
+              className='tag rounded-full bg-success/10 text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25'
             >
               {role}
             </p>
           ))}
         </div>
-        <div class='mt-6 grid w-full grid-cols-2 gap-2'>
-          <button class='btn space-x-2 bg-primary px-0 font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90'>
+        <div className='mt-6 grid w-full grid-cols-2 gap-2'>
+          <button className='btn space-x-2 bg-primary px-0 font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              class='h-4 w-4 shrink-0'
+              className='h-4 w-4 shrink-0'
               fill='none'
               viewBox='0 0 24 24'
             >
@@ -57,10 +57,10 @@ const UserListItem = ({ user }) => {
             </svg>
             <span>Profile</span>
           </button>
-          <button class='btn space-x-2 bg-primary px-0 font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90'>
+          <button className='btn space-x-2 bg-primary px-0 font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              class='h-4 w-4 shrink-0'
+              className='h-4 w-4 shrink-0'
               fill='none'
               viewBox='0 0 24 24'
               stroke='currentColor'

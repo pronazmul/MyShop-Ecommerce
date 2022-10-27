@@ -2,24 +2,24 @@ import React from 'react'
 
 const UserListHeader = () => {
   return (
-    <div class='flex items-center justify-between py-5 lg:py-6'>
-      <div class='flex items-center space-x-1'>
-        <h2 class='text-xl font-medium text-slate-700 line-clamp-1 dark:text-navy-50 lg:text-2xl'>
+    <div className='flex items-center justify-between py-5 lg:py-6'>
+      <div className='flex items-center space-x-1'>
+        <h2 className='text-xl font-medium text-slate-700 line-clamp-1 dark:text-navy-50 lg:text-2xl'>
           Users
         </h2>
       </div>
 
-      <div class='flex items-center space-x-2'>
-        <label class='relative hidden sm:flex'>
+      <div className='flex items-center space-x-2'>
+        <label className='relative hidden sm:flex'>
           <input
-            class='form-input peer h-9 w-full rounded-full border border-slate-300 bg-transparent px-3 py-2 pl-9 text-xs+ placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent'
+            className='form-input peer h-9 w-full rounded-full border border-slate-300 bg-transparent px-3 py-2 pl-9 text-xs+ placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent'
             placeholder='Search users...'
             type='text'
           />
-          <span class='pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent'>
+          <span className='pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              class='h-4 w-4 transition-colors duration-200'
+              className='h-4 w-4 transition-colors duration-200'
               fill='currentColor'
               viewBox='0 0 24 24'
             >
@@ -28,27 +28,27 @@ const UserListHeader = () => {
           </span>
         </label>
 
-        <div class='flex'>
-          <button class='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:hidden sm:h-9 sm:w-9'>
+        <div className='flex'>
+          <button className='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:hidden sm:h-9 sm:w-9'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              class='h-5 w-5'
+              className='h-5 w-5'
               stroke='currentColor'
               fill='none'
               viewBox='0 0 24 24'
             >
-              <circle cx='10.2' cy='10.2' r='7.2' stroke-width='1.5'></circle>
+              <circle cx='10.2' cy='10.2' r='7.2' strokeWidth='1.5'></circle>
               <path
-                stroke-width='1.5'
-                stroke-linecap='round'
+                strokeWidth='1.5'
+                strokeLinecap='round'
                 d='M21 21l-3.6-3.6'
               />
             </svg>
           </button>
-          <button class='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:h-9 sm:w-9'>
+          <button className='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:h-9 sm:w-9'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              class='h-5 w-5'
+              className='h-5 w-5'
               fill='none'
               viewBox='0 0 24 24'
             >
@@ -58,24 +58,24 @@ const UserListHeader = () => {
               />
             </svg>
           </button>
-          <button class='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:h-9 sm:w-9'>
+          <button className='btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:h-9 sm:w-9'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              class='h-5 w-5'
+              className='h-5 w-5'
               fill='none'
               viewBox='0 0 24 24'
               stroke='currentColor'
             >
               <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='1.5'
                 d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'
               />
               <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='1.5'
                 d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'
               />
             </svg>

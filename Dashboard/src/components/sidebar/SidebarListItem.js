@@ -12,7 +12,7 @@ const SidebarListItem = ({ node }) => {
       <Link
         to={!hasChild ? `/?tab=${node.link}` : ''}
         onClick={() => setChildVisiblity((v) => !v)}
-        class={`flex items-center justify-between py-2.5 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50 ${
+        className={`flex items-center justify-between py-2.5 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50 ${
           childVisible && 'text-slate-800 font-semibold dark:text-navy-50'
         }`}
       >
@@ -25,7 +25,7 @@ const SidebarListItem = ({ node }) => {
         {hasChild && (
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            class={`h-4 w-4 text-slate-400 transition-transform ease-in-out ${
+            className={`h-4 w-4 text-slate-400 transition-transform ease-in-out ${
               childVisible && 'rotate-90'
             }`}
             fill='none'
@@ -53,8 +53,8 @@ const SidebarListItem = ({ node }) => {
                     : 'text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50'
                 }`}
               >
-                <div class='flex items-center space-x-2'>
-                  <div class='h-1.5 w-1.5 rounded-full border border-current opacity-40'></div>
+                <div className='flex items-center space-x-2'>
+                  <div className='h-1.5 w-1.5 rounded-full border border-current opacity-40'></div>
                   <span>{nastedNode.label}</span>
                 </div>
               </Link>

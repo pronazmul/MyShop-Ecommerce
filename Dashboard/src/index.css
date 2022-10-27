@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /* .input-style{} */
+}
+
 *,
 :after,
 :before {
@@ -1026,7 +1030,7 @@ code.inline-code {
 }
 .form-select {
   color-adjust: exact;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath stroke='%235C6B8A' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath stroke='%235C6B8A' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
   background-position: 50%;
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
@@ -1739,7 +1743,7 @@ code.inline-code {
 .ts-wrapper.single .ts-control,
 .ts-wrapper.single.input-active .ts-control {
   color-adjust: exact;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath stroke='%235C6B8A' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath stroke='%235C6B8A' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
   background-position: 50%;
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
@@ -3908,15 +3912,15 @@ code.inline-code {
 .ql-snow .ql-stroke {
   fill: none;
   stroke: #444;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
+  strokelinecap: round;
+  strokelinejoin: round;
+  strokewidth: 2;
 }
 .ql-snow .ql-stroke-miter {
   fill: none;
   stroke: #444;
   stroke-miterlimit: 10;
-  stroke-width: 2;
+  strokewidth: 2;
 }
 .ql-snow .ql-fill,
 .ql-snow .ql-stroke.ql-fill {
@@ -3930,7 +3934,7 @@ code.inline-code {
 }
 .ql-snow .ql-stroke.ql-thin,
 .ql-snow .ql-thin {
-  stroke-width: 1;
+  strokewidth: 1;
 }
 .ql-snow .ql-transparent {
   opacity: 0.4;

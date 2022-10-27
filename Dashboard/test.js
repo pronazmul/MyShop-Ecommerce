@@ -1,105 +1,119 @@
 import React, { useState } from 'react'
-import Header from '../common/Header'
-import { useLocation } from 'react-router-dom'
-import Dashboard from './../sections/Dashboard'
-import AllOrder from './../sections/AllOrder'
-import CancelledOrder from './../sections/CancelledOrder'
-import PendingOrder from './../sections/PendingOrder'
-import AllProducts from './../sections/AllProducts'
-import AddProducts from './../sections/AddProducts'
-import OutOfStock from './../sections/OutOfStock'
-import AllUser from './../sections/AllUser'
-import AddUser from './../sections/AddUser'
-import SuspandedUser from './../sections/SuspandedUser'
-import PendingRequest from './../sections/PendingRequest'
-import AllCustomer from './../sections/AllCustomer'
-import CustomerReview from './../sections/CustomerReview'
-import DextopSidebar from './../common/DextopSidebar'
-import MobileSidebar from './../common/MobileSidebar'
+import { useNavigate } from 'react-router-dom'
+import logoImage from '../assets/logo.png'
+import Input from '../components/inputs/Input'
+import { Formik } from 'formik'
+import InputPassword from '../components/inputs/InputPassword'
+import { useLoginMutation } from '../features/auth/authApi'
+import { toast } from 'react-hot-toast'
+import { usersCredentials } from '../utils/config'
 
-const HomeScreen = () => {
-  const location = useLocation()
-  const redirect = location.search ? location.search.split('=')[1] : 'dashboard'
-  const [dextopSidebar, setDextopSidebar] = useState(true)
-  const [floatingSidebar, setFloatingSidebar] = useState(false)
-  const foatingSidebarHandler = () => setFloatingSidebar(!floatingSidebar)
+const Login = () => {
+  const navigate = useNavigate()
+  const [login, { data, isLoading, error }] = useLoginMutation()
 
-  const renderSection = (params) => {
-    switch (params) {
-      case 'dashboard':
-        return <Dashboard />
-      case 'all_orders':
-        return <AllOrder />
-      case 'cancelled_orders':
-        return <CancelledOrder />
-      case 'pending_orders':
-        return <PendingOrder />
-      case 'all_products':
-        return <AllProducts />
-      case 'add_product':
-        return <AddProducts />
-      case 'out_of_stock':
-        return <OutOfStock />
-      case 'all_users':
-        return <AllUser />
-      case 'add_user':
-        return <AddUser />
-      case 'suspanded_users':
-        return <SuspandedUser />
-      case 'pending_requests':
-        return <PendingRequest />
-      case 'all_customers':
-        return <AllCustomer />
-      case 'customers_review':
-        return <CustomerReview />
-      default:
-        return <Dashboard />
-    }
+  function loginHandler(values, { resetForm }) {
+    login(values)
+    resetForm()
   }
 
+  function defaultLogin(user) {
+    login({ email: user?.email, password: user?.password })
+  }
+
+  React.useEffect(() => {
+    if (data?.accessToken) {
+      toast.success('Successfully Logged In.')
+      navigate('/teams')
+    }
+    if (error?.data) {
+      toast.error(error.data)
+    }
+  }, [data, error, navigate])
+
   return (
-    <div className='min-h-screen bg-gray-50 fixed w-full'>
-      {/* Header */}
-      <div className='header'>
-        <div className={`xs:pl-0 ${dextopSidebar ? 'lg:pl-72' : 'lg:pl-0'}`}>
-          <Header
-            dextopSidebar={dextopSidebar}
-            setDextopSidebar={setDextopSidebar}
-            foatingSidebarHandler={foatingSidebarHandler}
-          />
+    <div className='grid place-items-center h-screen bg-[#F9FAFB'>
+      <div className='min-h-full flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
+        <div className='max-w-md w-full space-y-8'>
+          <div>
+            <img
+              className='mx-auto h-12 w-auto'
+              src={logoImage}
+              alt='Learn with sumit'
+            />
+            <h2 className='mt-6 text-center text-3xl font-bold text-gray-900'>
+              Sign in to your account
+            </h2>
+          </div>
+
+          <Formik
+            initialValues={{
+              email: '',
+              password: '',
+            }}
+            onSubmit={loginHandler}
+          >
+            {({ handleChange, values, handleSubmit }) => (
+              <form className='mt-8 space-y-6' onSubmit={handleSubmit}>
+                <div>
+                  <Input
+                    title='Email Address'
+                    name='email'
+                    type='email'
+                    value={values.email}
+                    onChange={handleChange}
+                    className='rounded-t-md'
+                    required
+                  />
+                  <InputPassword
+                    title='Password'
+                    name='password'
+                    onChange={handleChange}
+                    value={values.password}
+                    className='rounded-b-md'
+                    required
+                  />
+                </div>
+                <div>
+                  <button
+                    disabled={isLoading}
+                    type='submit'
+                    className='form-btn'
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            )}
+          </Formik>
         </div>
-      </div>
-      {/* Mobile Floating Sidebar */}
-      <MobileSidebar
-        floatingSidebar={floatingSidebar}
-        foatingSidebarHandler={foatingSidebarHandler}
-        redirect={redirect}
-      />
-      {/* Dextop fixed Sidebar */}
-      <div className='hidden lg:block'>
-        <div
-          className={`dextop ${
-            dextopSidebar
-              ? 'w-72 h-full fixed z-10 left-0 top-0 inline-block'
-              : ' hidden w-0 h-0'
-          }`}
-        >
-          <DextopSidebar redirect={redirect} />
-        </div>
-        <div className='mobile'></div>
-      </div>
-      {/* Contant Section */}
-      <div className='content h-screen overflow-y-scroll' id='sidebar-scroll'>
-        <div
-          className={` xs:pl-0 mb-24  ${
-            dextopSidebar ? 'lg:pl-72' : 'lg:pl-0'
-          }`}
-        >
-          <div>{renderSection(redirect)}</div>
+        <div className='space-y-2'>
+          <h2 className='mt-6 text-center text-md font-bold text-gray-500 uppercase'>
+            Sign In With
+          </h2>
+          {/* Login With Default Users */}
+          <div className='flex items-center space-x-2'>
+            {usersCredentials.map((user) => (
+              <div
+                key={user?.id}
+                className='space-y-1 p-2 shadow-lg rounded-lg cursor-pointer '
+                onClick={() => defaultLogin(user)}
+              >
+                <img
+                  className='mx-auto h-12 w-auto rounded-full'
+                  src={user?.avatar}
+                  alt='Learn with sumit'
+                />
+                <h2 className='text-xs text-center text-gray-400 '>
+                  {user?.name}
+                </h2>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default HomeScreen
+export default Login

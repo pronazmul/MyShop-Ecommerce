@@ -5,8 +5,8 @@ import { sidebarTree } from '../../utils/data'
 
 const Sidebar = () => {
   return (
-    <div class='sidebar-panel'>
-      <div class='flex h-full grow flex-col bg-white pl-4 dark:bg-navy-750'>
+    <div className='sidebar-panel'>
+      <div className='flex h-full grow flex-col bg-white pl-4 dark:bg-navy-750'>
         {/* Sidebar Panel Header */}
         <SidebarHeader />
         {/* Sidebar Panel Body */}

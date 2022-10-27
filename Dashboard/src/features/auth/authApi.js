@@ -12,17 +12,7 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled
-          localStorage.setItem(
-            'auth',
-            JSON.stringify({
-              user: result.data.user,
-            })
-          )
-          dispatch(
-            userLoggedIn({
-              user: result.data.user,
-            })
-          )
+          dispatch(userLoggedIn(result?.data?.data))
         } catch (error) {
           console.log({ error })
         }

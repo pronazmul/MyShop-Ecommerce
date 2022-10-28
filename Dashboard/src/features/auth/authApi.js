@@ -12,7 +12,31 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled
-          dispatch(userLoggedIn(result?.data?.data))
+          dispatch(
+            userLoggedIn({
+              user: result.data?.data,
+              roles: result.data?.data?.roles || [],
+            })
+          )
+        } catch (error) {
+          console.log({ error })
+        }
+      },
+    }),
+    loggedInInfo: builder.query({
+      query: () => ({
+        url: '/users/auth',
+        method: 'GET',
+      }),
+      async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+        try {
+          const result = await queryFulfilled
+          dispatch(
+            userLoggedIn({
+              user: result.data?.data,
+              roles: result.data?.data?.roles || [],
+            })
+          )
         } catch (error) {
           console.log({ error })
         }
@@ -21,4 +45,4 @@ export const authApi = apiSlice.injectEndpoints({
   }),
 })
 
-export const { useLoginMutation } = authApi
+export const { useLoginMutation, useLoggedInInfoQuery } = authApi

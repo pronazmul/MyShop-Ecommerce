@@ -11,6 +11,7 @@ import PublicRoute from './AuthRoutes/PublicRoute'
 
 const App = () => {
   const authCheck = useAuthCheck()
+
   return !authCheck ? (
     <Loader />
   ) : (

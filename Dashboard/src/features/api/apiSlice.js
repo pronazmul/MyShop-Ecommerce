@@ -9,6 +9,7 @@ const baseQuery = fetchBaseQuery({
     }
     return headers
   },
+  credentials: 'include', // For Accepting Cookie From Client Side
 })
 
 export const apiSlice = createApi({

@@ -24,10 +24,11 @@ const LoginPage = () => {
 
   React.useEffect(() => {
     if (data?.data?._id) {
+      toast.success('Login Success!')
       navigate('/')
     }
     if (error?.data) {
-      toast.error(error.data?.message || 'Something Went Wrong')
+      toast.error(error.data?.message || error?.error || 'Something Went Wrong')
     }
   }, [data, error, navigate])
 

@@ -52,13 +52,3 @@ const InputPassword = ({
 }
 
 export default InputPassword
-
-{
-  /* <span className='absolute right-3 top-2 text-gray-400 cursor-pointer z-10'>
-{inputType === 'password' ? (
-  <i onClick={inputTypeToggler} className='far fa-eye-slash' />
-) : (
-  <i onClick={inputTypeToggler} className='far fa-eye' />
-)}
-</span> */
-}

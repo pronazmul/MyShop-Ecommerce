@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const SidebarListItem = ({ node }) => {
   const [childVisible, setChildVisiblity] = React.useState(false)
   const hasChild = node?.children?.length ? true : false
-
   const [isActive, setIsActive] = React.useState(true)
 
   return (
@@ -12,7 +11,7 @@ const SidebarListItem = ({ node }) => {
       <Link
         to={!hasChild ? `/?tab=${node.link}` : ''}
         onClick={() => setChildVisiblity((v) => !v)}
-        className={`flex items-center justify-between py-2.5 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50 ${
+        className={`flex items-center justify-between py-2.5 tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50 ${
           childVisible && 'text-slate-800 font-semibold dark:text-navy-50'
         }`}
       >

@@ -4,13 +4,24 @@
 @tailwind utilities;
 
 @layer components {
-  /* .input-style{} */
+  .btn-icon {
+    @apply flex items-center space-x-2 rounded-lg px-4 py-2.5 tracking-wide outline-none transition-all;
+  }
+  .btn-primary {
+    @apply bg-primary text-white dark:bg-accent;
+  }
+  .btn-error{
+    @apply btn bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90
+  }
+  .btn-default {
+    @apply bg-transparent hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100;
+  }
 }
 
 *,
 :after,
 :before {
-  border: 0 solid #e5e7eb;
+  border: 0 solid #343a45;
   box-sizing: border-box;
 }
 :after,

@@ -99,6 +99,32 @@ export const sidebarTree = [
     link: 'logout',
   },
 ]
+export const profileTree = [
+  {
+    key: 1,
+    label: 'Update Profile',
+    icon: 'fa-regular fa-user',
+    link: 'dashboard',
+  },
+  {
+    key: 2,
+    label: 'Change Password',
+    icon: 'fas fa-key',
+    link: 'password',
+  },
+  {
+    key: 3,
+    label: 'Linked Devices',
+    icon: 'fas fa-desktop',
+    link: 'device',
+  },
+  {
+    key: 4,
+    label: 'Logout',
+    icon: 'fas fa-power-off',
+    link: 'logout',
+  },
+]
 
 export const demoUsers = [
   {

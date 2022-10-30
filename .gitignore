@@ -3,9 +3,11 @@
 # dependencies
 
 /Dashboard/node_modules
-/Dashboard/test.html
-/Dashboard/test.js
-/Dashboard/test.css
+
+# Test Files
+/Dashboard/demo.html
+/Dashboard/demo.js
+/Dashboard/demo.css
 
 
 /Frontend/node_modules

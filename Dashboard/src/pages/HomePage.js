@@ -4,6 +4,7 @@ import Dashboard from '../components/dashboard/Dashboard'
 import Layout from '../components/layout/Layout'
 import Users from '../components/users/Users'
 import { useLogoutQuery } from '../features/auth/authApi'
+import Profile from './../components/profile/Profile'
 
 const HomePage = () => {
   const search = useLocation().search
@@ -17,11 +18,11 @@ const HomePage = () => {
   const renderSection = (params) => {
     switch (params) {
       case 'dashboard':
-        return <Dashboard />
+        return <Profile />
       case 'all_users':
         return <Users />
       default:
-        return <Dashboard />
+        return <Profile />
     }
   }
 

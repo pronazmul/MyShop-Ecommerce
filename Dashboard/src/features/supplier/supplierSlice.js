@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const supplierSlice = createSlice({
-  name: 'category',
+  name: 'supplier',
   initialState,
   reducers: {},
 })

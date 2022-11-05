@@ -1,10 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { profileTree } from '../../utils/data'
 
 const ProfileSidebar = () => {
   const { user } = useSelector((state) => state.auth)
+
+  const search = useLocation().search
+  const current = new URLSearchParams(search).get('tab')
+
   return (
     <div className='card p-4 sm:p-5'>
       <div className='flex items-center space-x-4'>
@@ -21,10 +25,10 @@ const ProfileSidebar = () => {
       <ul className='mt-6 space-y-1.5 font-inter font-medium'>
         {profileTree.map((profileLink) => (
           <li key={profileLink.key}>
-            <Link>
+            <Link to={`/?tab=${profileLink.link}`}>
               <div
                 className={` w-full btn-icon ${
-                  profileLink.key === 1 ? `btn-primary` : `btn-default`
+                  profileLink.link === current ? `btn-primary` : `btn-default`
                 }`}
               >
                 <span>

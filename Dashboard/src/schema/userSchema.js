@@ -33,20 +33,36 @@ const loginSchema = yup.object().shape({
 
 const updateUserSchema = yup.object().shape({
   name: yup.string().optional(),
-  email: yup.string().optional().matches(email, 'Invalid Email Address!'),
   mobile: yup.string().optional().matches(mobile, 'Invalid Mobile Number!'),
-  password: yup.string().optional().matches(password, 'Invalid Password!'),
+  email: yup.string().optional().matches(email, 'Invalid Email Address!'),
 })
 
-// const userRolesSehema = yup.object().shape({
-//   roles: yup
-//     .array()
-//     .typeError('Roles must be array')
-//     .of(yup.mixed().oneOf(user.role)),
-// })
+const updatePasswordSchema = yup.object().shape({
+  currentPassword: yup
+    .string()
+    .required('Old Password is Required!')
+    .matches(password, 'Invalid Password!')
+    .min(8, 'Invalid Password!')
+    .max(50, 'Invalid Password!'),
+  newPassword: yup
+    .string()
+    .required('New Password is Required!')
+    .notOneOf([yup.ref('currentPassword')], 'Nothing to change!')
+    .matches(password, 'Uppercase Lowercase Special char Required')
+    .min(8, 'Password Should be minimum 8 character')
+    .max(50, 'Too long'),
+  confirmPassword: yup
+    .string()
+    .required('Confirm Password is Required!')
+    .when('newPassword', (password, field) =>
+      password ? field.required() : field
+    )
+    .oneOf([yup.ref('newPassword')], 'Password does not matched'),
+})
 
 module.exports = {
   createUserSchema,
   loginSchema,
   updateUserSchema,
+  updatePasswordSchema,
 }

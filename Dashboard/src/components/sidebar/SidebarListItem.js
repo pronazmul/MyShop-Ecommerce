@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const SidebarListItem = ({ node }) => {
+  const search = useLocation().search
+  const currentTab = new URLSearchParams(search).get('tab')
+
   const [childVisible, setChildVisiblity] = React.useState(false)
   const hasChild = node?.children?.length ? true : false
-  const [isActive, setIsActive] = React.useState(true)
 
   return (
     <li>
@@ -47,7 +49,7 @@ const SidebarListItem = ({ node }) => {
               <Link
                 to={`/?tab=${nastedNode.link}`}
                 className={`flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4 ${
-                  isActive
+                  currentTab === nastedNode.link
                     ? 'font-medium text-primary dark:text-accent-light'
                     : 'text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50'
                 }`}

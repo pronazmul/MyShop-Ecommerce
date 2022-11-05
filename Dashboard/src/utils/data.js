@@ -104,19 +104,19 @@ export const profileTree = [
     key: 1,
     label: 'Update Profile',
     icon: 'fa-regular fa-user',
-    link: 'dashboard',
+    link: 'update_profile',
   },
   {
     key: 2,
     label: 'Change Password',
     icon: 'fas fa-key',
-    link: 'password',
+    link: 'update_password',
   },
   {
     key: 3,
     label: 'Linked Devices',
     icon: 'fas fa-desktop',
-    link: 'device',
+    link: 'linked_devices',
   },
   {
     key: 4,

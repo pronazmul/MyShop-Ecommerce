@@ -5,7 +5,7 @@ export const authApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: '/users/auth',
+        url: '/auth/login',
         method: 'POST',
         body: data,
       }),
@@ -25,7 +25,7 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     loggedInInfo: builder.query({
       query: () => ({
-        url: '/users/auth',
+        url: '/auth/login_info',
         method: 'GET',
       }),
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
@@ -44,7 +44,7 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     logout: builder.query({
       query: () => ({
-        url: '/users/auth/logout',
+        url: '/auth/logout',
         method: 'GET',
       }),
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
@@ -58,7 +58,7 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     getActiveSessions: builder.query({
       query: (userId) => ({
-        url: `/users/auth/sessions/${userId}`,
+        url: `/auth/sessions/${userId}`,
         method: 'GET',
       }),
       transformResponse(apiResponse) {
@@ -67,7 +67,7 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     deactivateSession: builder.mutation({
       query: ({ userId, sessionId }) => ({
-        url: `/users/auth/sessions/${sessionId}`,
+        url: `/auth/sessions/${sessionId}`,
         method: 'PUT',
       }),
       async onQueryStarted(

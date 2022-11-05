@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import Dashboard from '../components/dashboard/Dashboard'
 import Layout from '../components/layout/Layout'
 import Users from '../components/users/Users'
 import { useLogoutQuery } from '../features/auth/authApi'

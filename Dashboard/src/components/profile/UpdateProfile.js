@@ -1,19 +1,29 @@
 import { Formik } from 'formik'
-import React from 'react'
+import React, { useEffect } from 'react'
+import toast from 'react-hot-toast'
 import { useSelector } from 'react-redux'
+import { useUpdateUserMutation } from '../../features/user/userApi'
 import { updateUserSchema } from '../../schema/userSchema'
 import { SvgMailIcon } from '../../utils/svgIcons'
 import InputText from './../inputs/InputText'
 
 const UpdateProfile = () => {
   const { user } = useSelector((state) => state.auth)
+  const [updateUser, { isLoading, isError, isSuccess }] =
+    useUpdateUserMutation()
 
   function updateHandler(values, { resetForm }) {
-    // delete values?.remember
-    // login(values)
-    // resetForm()
-    alert(JSON.stringify(values))
+    updateUser({ userId: user._id, data: values })
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success('Profile Updated!')
+    }
+    if (isError) {
+      toast.error('Failed to Update!')
+    }
+  }, [isSuccess, isError])
 
   return (
     <div className='card'>
@@ -52,8 +62,8 @@ const UpdateProfile = () => {
         <Formik
           initialValues={{
             name: user.name ?? '',
-            mobile: user.mobile ?? '',
             email: user.email ?? '',
+            mobile: user.mobile ?? '',
           }}
           validationSchema={updateUserSchema}
           onSubmit={updateHandler}
@@ -94,6 +104,7 @@ const UpdateProfile = () => {
               </div>
               <div className='my-7 h-px bg-slate-200 dark:bg-navy-500 col-sapn-2'></div>
               <button
+                disabled={isLoading}
                 type='submit'
                 className='btn min-w-[7rem] rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90'
               >

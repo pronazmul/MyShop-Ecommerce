@@ -1,16 +1,31 @@
 import { Formik } from 'formik'
-import React from 'react'
+import React, { useEffect } from 'react'
+import toast from 'react-hot-toast'
+import { useSelector } from 'react-redux'
+import { useUpdatePasswordMutation } from '../../features/user/userApi'
 import { updatePasswordSchema } from '../../schema/userSchema'
 import { SvgLockIcon } from '../../utils/svgIcons'
 import InputPassword from '../inputs/InputPassword'
 
 const UpdatePassword = () => {
+  const { user } = useSelector((state) => state.auth)
+  const [updatePassword, { isLoading, isError, isSuccess, error }] =
+    useUpdatePasswordMutation()
+
   function updateHandler(values, { resetForm }) {
     // delete values?.remember
-    // login(values)
-    // resetForm()
-    alert(JSON.stringify(values))
+    updatePassword({ userId: user._id, data: values })
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success('Password Updated!')
+    }
+    if (isError) {
+      toast.error(error.data.message)
+    }
+  }, [isSuccess, isError, error])
+
   return (
     <div className='card'>
       {/* Update Header */}
@@ -66,6 +81,7 @@ const UpdatePassword = () => {
               </div>
               <div className='my-7 h-px bg-slate-200 dark:bg-navy-500 col-sapn-2'></div>
               <button
+                disabled={isLoading}
                 type='submit'
                 className='btn min-w-[7rem] rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90'
               >

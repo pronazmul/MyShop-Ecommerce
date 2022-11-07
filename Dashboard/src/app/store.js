@@ -11,11 +11,13 @@ import shipperReducer from './../features/shipper/shipperSlice'
 import supplierReducer from './../features/supplier/supplierSlice'
 import wishlistReducer from './../features/wishlist/wishlistSlice'
 import globalSlice from './../features/global/globalSlice'
+import userReducer from './../features/user/userSlice'
 
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: authReducer,
+    user: userReducer,
     cart: cartReducer,
     categories: categoryReducer,
     address: addressReducer,

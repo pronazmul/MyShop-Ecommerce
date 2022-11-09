@@ -6,6 +6,7 @@ export const userApi = apiSlice.injectEndpoints({
     getUsers: builder.query({}),
     getUser: builder.query({}),
     addUser: builder.mutation({}),
+    
     updateUser: builder.mutation({
       query: ({ userId, data }) => ({
         url: `/users/${userId}`,

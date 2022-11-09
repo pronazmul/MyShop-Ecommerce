@@ -14,7 +14,8 @@ const authSlice = createSlice({
       state.roles = action.payload.roles
     },
     userUpdate: (state, action) => {
-      state.user = { ...state.user, ...action.payload }
+      state.user = action.payload
+      state.roles = action.payload.roles
     },
     userLoggedOut: (state) => {
       state.user = undefined

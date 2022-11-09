@@ -8,13 +8,16 @@ import { SvgMailIcon } from '../../utils/svgIcons'
 import InputText from './../inputs/InputText'
 
 const UpdateProfile = () => {
+  
   const { user } = useSelector((state) => state.auth)
   const [updateUser, { isLoading, isError, isSuccess }] =
     useUpdateUserMutation()
 
+;
   function updateHandler(values, { resetForm }) {
     updateUser({ userId: user._id, data: values })
   }
+
 
   useEffect(() => {
     if (isSuccess) {

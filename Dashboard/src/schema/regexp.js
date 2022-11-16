@@ -1,5 +1,6 @@
 const regexp = {
   image: ['image/jpeg', 'image/jpg', 'image/png'],
+  imageSize: 1000000,
   password:
     /^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
   mobile: /(\+088)?-?01[0-9]\d{8}/g,

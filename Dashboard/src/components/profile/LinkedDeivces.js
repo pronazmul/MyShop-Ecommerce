@@ -37,7 +37,7 @@ const LinkedDeivces = () => {
                     Platform
                   </th>
                   <th className='whitespace-nowrap border border-t-0 border-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:border-navy-500 dark:text-navy-100 lg:px-5'>
-                    Date
+                    Time
                   </th>
                   <th className='whitespace-nowrap border border-t-0 border-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:border-navy-500 dark:text-navy-100 lg:px-5'>
                     Action

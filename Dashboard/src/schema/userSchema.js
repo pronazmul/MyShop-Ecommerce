@@ -1,5 +1,5 @@
 const yup = require('yup')
-const { email, mobile, password } = require('./regexp')
+const { email, mobile, password, image, imageSize } = require('./regexp')
 
 const createUserSchema = yup.object().shape({
   name: yup.string().required('Name is Required!'),
@@ -37,6 +37,21 @@ const updateUserSchema = yup.object().shape({
   email: yup.string().optional().matches(email, 'Invalid Email Address!'),
 })
 
+const updateAvatarSchema = yup.object().shape({
+  avatar: yup
+    .mixed()
+    .test(
+      'fileSize',
+      'File more than 1 MB not Allowed',
+      (value) => value && value.size <= imageSize
+    )
+    .test(
+      'fileFormat',
+      'Unsupported Image Format!',
+      (value) => value && image.includes(value.type)
+    ),
+})
+
 const updatePasswordSchema = yup.object().shape({
   currentPassword: yup
     .string()
@@ -64,5 +79,6 @@ module.exports = {
   createUserSchema,
   loginSchema,
   updateUserSchema,
+  updateAvatarSchema,
   updatePasswordSchema,
 }

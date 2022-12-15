@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Layout from '../components/layout/Layout'
@@ -10,9 +11,15 @@ const HomePage = () => {
   const component = new URLSearchParams(search).get('tab')
 
   //Logout
-  useLogoutQuery(undefined, {
+  const { refetch } = useLogoutQuery(undefined, {
     skip: Boolean(component !== 'logout'),
   })
+
+  React.useEffect(() => {
+    if (component === 'logout') {
+      refetch()
+    }
+  }, [component, refetch])
 
   const renderSection = (params) => {
     switch (params) {

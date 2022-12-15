@@ -21,7 +21,7 @@ const useAuthCheck = () => {
   }
 
   React.useEffect(() => {
-    if (data?.data?._id) setAuthCheck(true)
+    if (data?._id) setAuthCheck(true)
     if (isError) setAuthCheck(true)
   }, [data, isError])
 

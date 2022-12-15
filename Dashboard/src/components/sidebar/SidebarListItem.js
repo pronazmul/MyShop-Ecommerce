@@ -48,7 +48,7 @@ const SidebarListItem = ({ node }) => {
             <li key={nastedNode.key}>
               <Link
                 to={`/?tab=${nastedNode.link}`}
-                className={`flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4 ${
+                className={`flex items-center justify-between p-2 text-sm tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4 ${
                   currentTab === nastedNode.link
                     ? 'font-medium text-primary dark:text-accent-light'
                     : 'text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50'

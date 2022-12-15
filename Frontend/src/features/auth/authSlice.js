@@ -10,12 +10,12 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     userLoggedIn: (state, action) => {
-      state.user = action.payload
-      state.roles = action.payload?.roles || []
+      state.user = action.payload.user
+      state.roles = action.payload.roles
     },
     userUpdate: (state, action) => {
       state.user = action.payload
-      state.roles = action.payload?.roles || []
+      state.roles = action.payload.roles
     },
     userLoggedOut: (state) => {
       state.user = undefined

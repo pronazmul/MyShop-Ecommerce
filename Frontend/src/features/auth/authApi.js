@@ -12,7 +12,12 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled
-          dispatch(userLoggedIn(result?.data))
+          dispatch(
+            userLoggedIn({
+              user: result.data?.data,
+              roles: result.data?.data?.roles || [],
+            })
+          )
         } catch (error) {
           console.log({ error })
         }
@@ -26,7 +31,12 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled
-          dispatch(userLoggedIn(result?.data))
+          dispatch(
+            userLoggedIn({
+              user: result.data?.data,
+              roles: result.data?.data?.roles || [],
+            })
+          )
         } catch (error) {
           console.log({ error })
         }
@@ -52,8 +62,7 @@ export const authApi = apiSlice.injectEndpoints({
         method: 'GET',
       }),
       transformResponse(apiResponse) {
-        // return apiResponse?.data
-        return apiResponse
+        return apiResponse?.data
       },
     }),
     deactivateSession: builder.mutation({
@@ -70,7 +79,7 @@ export const authApi = apiSlice.injectEndpoints({
           // Logout Current User If Deactivated Session is Current User
           const { auth } = getState()
 
-          if (auth?.user?.session === session?.data?._id) {
+          if (auth?.user?.session === session?.data?.data?._id) {
             dispatch(userLoggedOut())
           }
 

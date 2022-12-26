@@ -3,14 +3,15 @@
 # dependencies
 
 /Dashboard/node_modules
+/SERVER/node_modules
+/FRONTEND/node_modules
+
 
 # Test Files
 /Dashboard/demo.html
 /Dashboard/demo.js
 /Dashboard/demo.css
 
-
-/Frontend/node_modules
 
 
 # testing

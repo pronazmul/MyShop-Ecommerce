@@ -24,6 +24,8 @@ const Layout = ({ children }) => {
       <main className='main-content w-full px-[var(--margin-x)] pb-8'>
         {children}
       </main>
+
+      {/* Footer */}
     </div>
   )
 }

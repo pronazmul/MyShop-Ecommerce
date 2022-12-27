@@ -11,7 +11,7 @@ const DashboardHeader = () => {
         <p>View your current sales & summery</p>
       </div>
       <div>
-        <button className='flex space-x-1 btn border border-primary font-medium text-primary hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary/90 dark:border-accent dark:text-accent-light dark:hover:bg-accent dark:hover:text-white dark:focus:bg-accent dark:focus:text-white dark:active:bg-accent/90'>
+        <button className='flex space-x-1 btn-indigo'>
           <FunnelIcon className='h-5 w-5' />
           <span>Filter</span>
         </button>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ArrowUpIcon } from '@heroicons/react/24/outline'
 
-const AmountCardItem = ({ title, amount, range, percentage }) => {
+const DashboardAmountCardItem = ({ title, amount, range, percentage }) => {
   return (
     <div class='card px-4 py-4 sm:px-5'>
       <div>
@@ -33,4 +33,4 @@ const AmountCardItem = ({ title, amount, range, percentage }) => {
   )
 }
 
-export default AmountCardItem
+export default DashboardAmountCardItem

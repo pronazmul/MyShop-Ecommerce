@@ -42,7 +42,7 @@ const getSingle = async (req, res, next) => {
       })
       .populate({
         path: 'category',
-        select: 'category tags -_id',
+        select: 'category image tags -_id',
       })
 
     const reviews = await Review.find(reviewQuery).populate({
@@ -78,7 +78,7 @@ const getAll = async (req, res, next) => {
       .skip(limit * (page - 1))
       .populate({
         path: 'category',
-        select: 'category tags -_id',
+        select: 'category image tags -_id',
       })
 
     res.set('x-total-count', totalCount)

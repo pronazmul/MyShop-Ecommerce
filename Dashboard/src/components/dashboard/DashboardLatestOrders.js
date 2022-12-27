@@ -8,7 +8,7 @@ const DashboardLatestOrders = () => {
         <h2 class='font-xl text-base tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100 lg:text-xl'>
           Latest Orders
         </h2>
-        <button className='flex space-x-1 btn border border-primary font-medium text-primary hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary/90 dark:border-accent dark:text-accent-light dark:hover:bg-accent dark:hover:text-white dark:focus:bg-accent dark:focus:text-white dark:active:bg-accent/90'>
+        <button className='btn-indigo'>
           <span>View Orders</span>
         </button>
       </div>

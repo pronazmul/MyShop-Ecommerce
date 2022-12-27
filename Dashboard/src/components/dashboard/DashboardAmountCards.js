@@ -1,12 +1,12 @@
 import React from 'react'
 import { dashboardDemoAmounts } from '../../utils/data'
-import AmountCardItem from './AmountCardItem'
+import DashboardAmountCardItem from './DashboardAmountCardItem'
 
-const AmountCards = () => {
+const DashboardAmountCards = () => {
   return (
     <div class='grid grid-cols-1 gap-2 sm:gap-4 lg:grid-cols-3 lg:gap-4 mt-4'>
       {dashboardDemoAmounts.map((data, index) => (
-        <AmountCardItem
+        <DashboardAmountCardItem
           key={index}
           title={data.title}
           amount={data.amount}
@@ -18,4 +18,4 @@ const AmountCards = () => {
   )
 }
 
-export default AmountCards
+export default DashboardAmountCards

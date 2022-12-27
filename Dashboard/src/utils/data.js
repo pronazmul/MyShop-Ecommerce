@@ -7,7 +7,7 @@ export const sidebarTree = [
   },
   {
     key: 2,
-    label: 'Manage Products',
+    label: 'Products',
     icon: 'fas fa-shopping-cart',
     link: '#',
     children: [
@@ -30,7 +30,7 @@ export const sidebarTree = [
   },
   {
     key: 3,
-    label: 'Manage Orders',
+    label: 'Orders',
     icon: 'fas fa-gift',
     link: '#',
     children: [
@@ -53,7 +53,7 @@ export const sidebarTree = [
   },
   {
     key: 4,
-    label: 'Manage User',
+    label: 'Users',
     icon: 'fas fa-user-tie',
     link: '#',
     children: [
@@ -76,7 +76,7 @@ export const sidebarTree = [
   },
   {
     key: 5,
-    label: 'Manage Customers',
+    label: 'Customers',
     icon: 'fas fa-users',
     link: '#',
     children: [
@@ -94,6 +94,12 @@ export const sidebarTree = [
   },
   {
     key: 6,
+    label: 'Profile',
+    icon: 'fas fa-user-tie',
+    link: 'profile',
+  },
+  {
+    key: 7,
     label: 'Logout',
     icon: 'fas fa-power-off',
     link: 'logout',
@@ -125,7 +131,6 @@ export const profileTree = [
     link: 'logout',
   },
 ]
-
 export const demoUsers = [
   {
     _id: '634adf6dca4c597f21539ef4',
@@ -414,5 +419,251 @@ export const demoUsers = [
       },
     ],
     roles: ['user'],
+  },
+]
+export const dashboardDemoAmounts = [
+  {
+    title: 'Revenue',
+    amount: '$21827.13',
+    range: 'vs 3 months prior to 26 sep',
+    percentage: 11.4,
+  },
+  {
+    title: 'Orders',
+    amount: '1,758',
+    range: 'vs 3 months prior to 26 sep',
+    percentage: -3.2,
+  },
+  {
+    title: 'Purchases',
+    amount: '$7,249.31',
+    range: 'vs 3 months prior to 26 sep',
+    percentage: 5.7,
+  },
+]
+export const latestOrdersDemo = [
+  {
+    order: '#123',
+    status: 'paid',
+    date: Date.now() - 10000,
+    customer: 'Habibur Rahman',
+    total: '$400.00',
+  },
+  {
+    order: '#345',
+    status: 'paid',
+    date: Date.now() - 30000,
+    customer: 'Moshiur Rahman',
+    total: '$60.00',
+  },
+  {
+    order: '#986',
+    status: 'pending',
+    date: Date.now() - 90000,
+    customer: 'Ahmed Jubayer',
+    total: '$90.00',
+  },
+  {
+    order: '#124',
+    status: 'failed',
+    date: Date.now() - 40000,
+    customer: 'Fayez Ahmed',
+    total: '$80.00',
+  },
+  {
+    order: '#431',
+    status: 'paid',
+    date: Date.now() - 50000,
+    customer: 'Abdulla Mamun',
+    total: '$180.00',
+  },
+  {
+    order: '#845',
+    status: 'failed',
+    date: Date.now() - 60000,
+    customer: 'Hasin Hyder',
+    total: '$18.00',
+  },
+  {
+    order: '#423',
+    status: 'paid',
+    date: Date.now() - 70000,
+    customer: 'Hafizul Islam',
+    total: '$88.00',
+  },
+]
+export const topSellingDemo = [
+  {
+    image: 'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    product: 'Polo Shirt',
+    quantity: '120',
+  },
+  {
+    image: 'https://i.ibb.co/vvCq2zS/IMG-5202-3-768x768.webp',
+    product: 'Full Sleve Shirt',
+    quantity: '110',
+  },
+  {
+    image: 'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    product: 'Grammen Full Shirt',
+    quantity: '97',
+  },
+  {
+    image: 'https://i.ibb.co/vvCq2zS/IMG-5202-3-768x768.webp',
+    product: 'Casual Shirt',
+    quantity: '70',
+  },
+  {
+    image: 'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    product: 'Denim Shirt',
+    quantity: '30',
+  },
+  {
+    image: 'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    product: 'Black T Shirt',
+    quantity: '5',
+  },
+]
+export const statusColor = {
+  paid: 'success',
+  pending: 'warning',
+  failed: 'error',
+}
+export const ProductListDemo = [
+  {
+    name: 'Men’s Polo Shirt',
+    description:
+      'Men’s Cotton Casual T-Shirt Made In China. Men’s Cotton Casual T-Shirt',
+    brand: 'topten',
+    tags: [],
+    price: 499.0,
+    discount: 20,
+    taxRate: 5,
+    countInStock: 10,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/yh23SQ0/Cotton-Polo-Shirt-2-768x768.webp',
+      'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    ],
+  },
+  {
+    name: 'Tipping Collar Polo shirt',
+    description:
+      'Men’s Cotton Casual T-Shirt Made In China. Men’s Cotton Casual T-Shirt',
+    brand: 'denim',
+    tags: [],
+    price: 399.0,
+    discount: 20,
+    taxRate: 2,
+    countInStock: 5,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/KxHMZJV/Cotton-Polo-Shirt-768x768.webp',
+      'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    ],
+  },
+  {
+    name: 'Casual Full Sleve Shirt',
+
+    description:
+      'Men’s Cotton Casual Full-Shirt Made In China. Men’s Cotton Casual T-Shirt',
+    brand: 'topten',
+    tags: [],
+    price: 499.0,
+    discount: 60,
+    taxRate: 4,
+    countInStock: 50,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/vvCq2zS/IMG-5202-3-768x768.webp',
+      'https://i.ibb.co/TL2zPNG/IMG-6217-inn-768x768.webp',
+    ],
+  },
+
+  // Ladies
+  {
+    name: 'Ladies Jeans Pant',
+    description:
+      'Ladies Cotton Casual T-Shirt Made In China. Ladies Cotton Casual T-Shirt',
+    brand: 'topten',
+    tags: [],
+    price: 499.0,
+    discount: 40,
+    taxRate: 2,
+    countInStock: 0,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/zN7wkVL/IMG-5192-scaled.jpg',
+      'https://i.ibb.co/8KKpWY2/IMG-5657-768x768.webp',
+    ],
+  },
+  {
+    name: 'Ladies Kurti',
+    description:
+      'Ladies Cotton Casual T-Shirt Made In China. Ladies Cotton Casual T-Shirt',
+    brand: 'denim',
+    tags: [],
+    price: 399.0,
+    discount: 30,
+    taxRate: 5,
+    countInStock: 5,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/fvH9R4Z/IMG-5366-scaled.jpg',
+      'https://i.ibb.co/8KKpWY2/IMG-5657-768x768.webp',
+    ],
+  },
+  {
+    name: 'Ladies Mid Length Tops',
+    description:
+      'Ladies Cotton Casual T-Shirt Made In China. Ladies Cotton Casual T-Shirt',
+    brand: 'easy',
+    tags: [],
+    price: 599.0,
+    discount: 50,
+    taxRate: 5,
+    countInStock: 48,
+    rating: 0,
+    reviewsCount: 0,
+    images: ['https://i.ibb.co/sKX8Xd2/IMG-5457-scaled.jpg'],
+  },
+  {
+    name: 'Ladies Western Length Tops',
+    description:
+      'Ladies Cotton Casual Full-Shirt Made In China. Ladies Cotton Casual T-Shirt',
+    brand: 'topten',
+    tags: [],
+    price: 499.0,
+    discount: 40,
+    taxRate: 6,
+    countInStock: 10,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/f1kpH0M/IMG-5529-scaled.jpg',
+      'https://i.ibb.co/8KKpWY2/IMG-5657-768x768.webp',
+    ],
+  },
+  {
+    name: 'Ladies Mid Length Set',
+    description:
+      'Ladies Cotton Casual Shirt Made In China. Ladies Cotton Casual T-Shirt',
+    brand: 'topten',
+    tags: [],
+    price: 799.0,
+    discount: 50,
+    taxRate: 2,
+    countInStock: 3,
+    rating: 0,
+    reviewsCount: 0,
+    images: [
+      'https://i.ibb.co/8KKpWY2/IMG-5657-768x768.webp',
+      'https://i.ibb.co/0VS1P18/IMG-5639-768x768.webp',
+    ],
   },
 ]

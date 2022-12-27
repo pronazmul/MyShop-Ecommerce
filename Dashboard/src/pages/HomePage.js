@@ -6,6 +6,7 @@ import Users from '../components/users/Users'
 import { useLogoutQuery } from '../features/auth/authApi'
 import Profile from './../components/profile/Profile'
 import Dashboard from './../components/dashboard/Dashboard'
+import ProductList from '../components/ProductList/ProductList'
 
 const HomePage = () => {
   const search = useLocation().search
@@ -28,8 +29,12 @@ const HomePage = () => {
         return <Dashboard />
       case 'all_users':
         return <Users />
-      default:
+      case 'all_products':
+        return <ProductList />
+      case 'profile':
         return <Profile />
+      default:
+        return <Dashboard />
     }
   }
 

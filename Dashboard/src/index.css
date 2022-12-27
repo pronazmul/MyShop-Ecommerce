@@ -10,11 +10,19 @@
   .btn-primary {
     @apply bg-primary text-white dark:bg-accent;
   }
-  .btn-error{
-    @apply btn bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90
+  .btn-error {
+    @apply btn bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90;
   }
   .btn-default {
     @apply bg-transparent hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100;
+  }
+
+  /* New Buttons */
+  .btn-indigo {
+    @apply btn border border-primary font-medium text-primary hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary/90 dark:border-accent dark:text-accent-light dark:hover:bg-accent dark:hover:text-white dark:focus:bg-accent dark:focus:text-white dark:active:bg-accent/90;
+  }
+  .btn-indigo-active {
+    @apply btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90;
   }
 }
 
@@ -3301,7 +3309,9 @@ code.inline-code {
 }
 .filepond--root[data-style-panel-layout~='circle']
   .filepond--file
-  .filepond--file-action-button[data-align*='bottom']:not([data-align*='center']) {
+  .filepond--file-action-button[data-align*='bottom']:not(
+    [data-align*='center']
+  ) {
   margin-bottom: 0.325em;
 }
 .filepond--root[data-style-panel-layout~='circle']

@@ -21,11 +21,6 @@ export const sidebarTree = [
         label: 'Add Products',
         link: 'add_products',
       },
-      {
-        key: 2.3,
-        label: 'Out Of Stock',
-        link: 'out_of_stock',
-      },
     ],
   },
   {
@@ -67,11 +62,6 @@ export const sidebarTree = [
         label: 'Add User',
         link: 'add_user',
       },
-      {
-        key: 4.3,
-        label: 'Suspanded Users',
-        link: 'suspanded_user',
-      },
     ],
   },
   {
@@ -97,6 +87,26 @@ export const sidebarTree = [
     label: 'Profile',
     icon: 'fas fa-user-tie',
     link: 'profile',
+    children: [
+      {
+        key: 6.1,
+        label: 'Update Profile',
+        icon: 'fa-regular fa-user',
+        link: 'update_profile',
+      },
+      {
+        key: 6.2,
+        label: 'Change Password',
+        icon: 'fas fa-key',
+        link: 'update_password',
+      },
+      {
+        key: 6.3,
+        label: 'Linked Devices',
+        icon: 'fas fa-desktop',
+        link: 'linked_devices',
+      },
+    ],
   },
   {
     key: 7,

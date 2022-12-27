@@ -1,12 +1,14 @@
-import { data } from 'autoprefixer'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Layout from '../components/layout/Layout'
 import Users from '../components/users/Users'
 import { useLogoutQuery } from '../features/auth/authApi'
-import Profile from './../components/profile/Profile'
 import Dashboard from './../components/dashboard/Dashboard'
 import ProductList from '../components/ProductList/ProductList'
+import AddProduct from '../components/AddProduct/AddProduct'
+import UpdateProfile from './../components/UpdateProfile/UpdateProfile'
+import UpdatePassword from './../components/UpdatePassword/UpdatePassword'
+import LinkedDeivces from './../components/linkedDevices/LinkedDeivces'
 
 const HomePage = () => {
   const search = useLocation().search
@@ -31,8 +33,14 @@ const HomePage = () => {
         return <Users />
       case 'all_products':
         return <ProductList />
-      case 'profile':
-        return <Profile />
+      case 'add_products':
+        return <AddProduct />
+      case 'update_profile':
+        return <UpdateProfile />
+      case 'update_password':
+        return <UpdatePassword />
+      case 'linked_devices':
+        return <LinkedDeivces />
       default:
         return <Dashboard />
     }

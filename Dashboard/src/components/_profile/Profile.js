@@ -2,7 +2,7 @@ import React from 'react'
 import ProfileSidebar from './ProfileSidebar'
 import { useLocation } from 'react-router-dom'
 import LinkedDeivces from './LinkedDeivces'
-import UpdateProfile from './UpdateProfile'
+import UpdateProfile from '../UpdateProfile/UpdateProfile'
 import UpdatePassword from './UpdatePassword'
 
 const Profile = () => {

@@ -27,7 +27,7 @@ const UpdatePassword = () => {
   }, [isSuccess, isError, error])
 
   return (
-    <div className='card'>
+    <div className='mt-5 card'>
       {/* Update Header */}
       <div className='flex flex-col items-center space-y-4 border-b border-slate-200 p-4 dark:border-navy-500 sm:flex-row sm:justify-between sm:space-y-0 sm:px-5'>
         <h2 className='text-lg font-medium tracking-wide text-slate-700 dark:text-navy-100'>
@@ -35,7 +35,7 @@ const UpdatePassword = () => {
         </h2>
       </div>
       {/* Update body */}
-      <div className='p-4 sm:p-5'>
+      <div className='p-4 sm:p-5 w-full lg:w-1/2 mx-auto'>
         <Formik
           initialValues={{
             currentPassword: '',

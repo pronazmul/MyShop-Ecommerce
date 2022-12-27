@@ -5,11 +5,10 @@ import { useSelector } from 'react-redux'
 import { useUpdateUserMutation } from '../../features/user/userApi'
 import { updateUserSchema } from '../../schema/userSchema'
 import { SvgMailIcon } from '../../utils/svgIcons'
-import InputText from './../inputs/InputText'
-import UpdateAvatar from './UpdateAvatar';
+import InputText from '../inputs/InputText'
+import UpdateAvatar from './UpdateAvatar'
 
 const UpdateProfile = () => {
-  
   const { user } = useSelector((state) => state.auth)
   const [updateUser, { isLoading, isError, isSuccess }] =
     useUpdateUserMutation()
@@ -28,8 +27,7 @@ const UpdateProfile = () => {
   }, [isSuccess, isError])
 
   return (
-    <div className='card'>
-
+    <div className=' mt-5 card'>
       {/* Update Header */}
       <div className='flex flex-col items-center space-y-4 border-b border-slate-200 p-4 dark:border-navy-500 sm:flex-row sm:justify-between sm:space-y-0 sm:px-5'>
         <h2 className='text-lg font-medium tracking-wide text-slate-700 dark:text-navy-100'>
@@ -38,9 +36,9 @@ const UpdateProfile = () => {
       </div>
 
       {/* Update Body */}
-      <div className='p-4 sm:p-5'>
+      <div className='p-4 sm:p-5 w-full lg:w-2/3 mx-auto'>
         {/* Update Avatar */}
-          <UpdateAvatar/> 
+        <UpdateAvatar />
 
         <div className='my-7 h-px bg-slate-200 dark:bg-navy-500'></div>
         {/* Update Info */}

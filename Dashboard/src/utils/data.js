@@ -534,11 +534,7 @@ export const topSellingDemo = [
     quantity: '5',
   },
 ]
-export const statusColor = {
-  paid: 'success',
-  pending: 'warning',
-  failed: 'error',
-}
+
 export const ProductListDemo = [
   {
     name: 'Men’s Polo Shirt',
@@ -677,3 +673,16 @@ export const ProductListDemo = [
     ],
   },
 ]
+//
+export const statusColor = {
+  paid: 'success',
+  pending: 'warning',
+  failed: 'error',
+}
+// Product Image Upload Configuration file
+export const productImageConfig = {
+  title: 'Drop files here or Click to browse',
+  accept: 'image/png, image/jpg, image/jpeg',
+  maxFiles: 4,
+  maxFileSize: 2048000,
+}

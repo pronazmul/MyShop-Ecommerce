@@ -31,7 +31,7 @@ const UpdateProfile = () => {
       {/* Update Header */}
       <div className='flex flex-col items-center space-y-4 border-b border-slate-200 p-4 dark:border-navy-500 sm:flex-row sm:justify-between sm:space-y-0 sm:px-5'>
         <h2 className='text-lg font-medium tracking-wide text-slate-700 dark:text-navy-100'>
-          Account Setting
+          Profile Information
         </h2>
       </div>
 

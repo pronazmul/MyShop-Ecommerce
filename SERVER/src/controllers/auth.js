@@ -80,6 +80,7 @@ const login = async (req, res, next) => {
         avatar: user?.avatar,
       }
       let accessToken = user.generateJwtToken({ user: userData, session })
+
       let refreshToken = user.generateJwtToken(
         { session },
         process.env.REFRESH_TOKEN

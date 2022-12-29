@@ -10,7 +10,7 @@ export default function DropDownSelectOption({
   children,
 }) {
   return (
-    <div className=' text-left top-16 z-30'>
+    <div className='text-left top-16 z-30'>
       <Menu as='div' className='relative inline-block text-left'>
         <Menu.Button>{children}</Menu.Button>
         <Transition

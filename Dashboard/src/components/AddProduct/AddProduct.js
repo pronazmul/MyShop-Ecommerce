@@ -24,7 +24,7 @@ const AddProduct = () => {
 
       {/* Setup Fromik */}
       <Formik
-        initialValues={{ images: [] }}
+        initialValues={{ images: [], description: '' }}
         validationSchema={createProductSchema}
         onSubmit={addProductHandler}
       >

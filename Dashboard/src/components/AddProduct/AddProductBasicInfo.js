@@ -1,5 +1,7 @@
 import React from 'react'
 import InputText from '../inputs/InputText'
+import TextArea from '../inputs/TextArea'
+import TextEditor from '../inputs/TextEditor'
 
 const AddProductBasicInfo = ({ formik }) => {
   const { handleChange, values, errors } = formik
@@ -27,11 +29,21 @@ const AddProductBasicInfo = ({ formik }) => {
           onChange={handleChange}
           required
         />
-        <InputText
+        {/* <TextArea
           value={values.description}
           error={errors.description}
           label='Description'
           name='description'
+          placeholder='Enter product description'
+          onChange={handleChange}
+          required
+        /> */}
+        <TextEditor
+          value={values.description}
+          error={errors.description}
+          label='Description'
+          name='description'
+          type='text'
           placeholder='Enter product description'
           onChange={handleChange}
           required

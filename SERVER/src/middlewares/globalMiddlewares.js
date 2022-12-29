@@ -12,6 +12,7 @@ const cors = require('cors')
  * @middleware : json parser middleware
  * @middleware : cookieParser Middleware
  */
+
 const globalMiddlewares = [
   morgan('dev'),
   cors({ origin: 'http://localhost:3009', credentials: true }),

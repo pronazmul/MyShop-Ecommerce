@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Layout from '../components/layout/Layout'
-import Users from '../components/users/Users'
+import UserList from '../components/userList/UserList'
 import { useLogoutQuery } from '../features/auth/authApi'
 import Dashboard from './../components/dashboard/Dashboard'
 import ProductList from '../components/productList/ProductList'
@@ -35,9 +35,6 @@ const HomePage = () => {
       case 'dashboard':
         dispatch(sidebarToggled())
         return <Dashboard />
-      case 'all_users':
-        dispatch(sidebarToggled())
-        return <Users />
       case 'all_products':
         dispatch(sidebarToggled())
         return <ProductList />
@@ -50,6 +47,9 @@ const HomePage = () => {
       case 'add_categories':
         dispatch(sidebarToggled())
         return <AddCategory />
+      case 'all_users':
+        dispatch(sidebarToggled())
+        return <UserList />
       case 'update_profile':
         dispatch(sidebarToggled())
         return <UpdateProfile />

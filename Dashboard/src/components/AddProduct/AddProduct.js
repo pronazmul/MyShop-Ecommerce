@@ -31,18 +31,18 @@ const AddProduct = () => {
         {(formik) => (
           <form
             onSubmit={formik.handleSubmit}
-            className='grid grid-cols-1 gap-2 sm:gap-4 lg:grid-cols-3 lg:gap-4'
+            className='grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-4'
           >
-            <div className='lg:col-span-2 '>
+            <div className='col-span-2 lg:col-span-2 '>
               <AddProductBasicInfo formik={formik} />
             </div>
-            <div className='lg:col-span-1'>
+            <div className='col-span-2 lg:col-span-1'>
               <AddProductImage formik={formik} />
             </div>
-            <div className='lg:col-span-2'>
+            <div className='col-span-2 lg:col-span-2'>
               <AddProductPricingInfo formik={formik} />
             </div>
-            <div className='lg:col-span-2'>
+            <div className='col-span-2 lg:col-span-2'>
               <AddProductOrganizationInfo formik={formik} />
             </div>
             <div className='col-span-3 flex space-x-2 justify-end'>

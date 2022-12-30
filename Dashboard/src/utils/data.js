@@ -53,16 +53,16 @@ export const sidebarTree = [
         label: 'All Orders',
         link: 'all_orders',
       },
-      {
-        key: 4.2,
-        label: 'Cancelled Orders',
-        link: 'cancelled_orders',
-      },
-      {
-        key: 4.3,
-        label: 'Pending Orders',
-        link: 'pending_orders',
-      },
+      // {
+      //   key: 4.2,
+      //   label: 'Cancelled Orders',
+      //   link: 'cancelled_orders',
+      // },
+      // {
+      //   key: 4.3,
+      //   label: 'Pending Orders',
+      //   link: 'pending_orders',
+      // },
     ],
   },
   {
@@ -127,12 +127,12 @@ export const sidebarTree = [
       },
     ],
   },
-  {
-    key: 8,
-    label: 'Logout',
-    icon: 'fas fa-power-off',
-    link: 'logout',
-  },
+  // {
+  //   key: 8,
+  //   label: 'Logout',
+  //   icon: 'fas fa-power-off',
+  //   link: 'logout',
+  // },
 ]
 export const profileTree = [
   {
@@ -861,9 +861,8 @@ export const statusColor = {
   failed: 'error',
 }
 // Product Image Upload Configuration file
-export const productImageConfig = {
+export const drugAndDropConfig = {
   title: 'Drop files here or Click to browse',
   accept: 'image/png, image/jpg, image/jpeg',
-  maxFiles: 4,
-  maxFileSize: 2048000,
+  maxFileSize: 2097152,
 }

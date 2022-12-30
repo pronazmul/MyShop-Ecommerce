@@ -2,6 +2,7 @@ import React from 'react'
 import SidebarHeader from './SidebarHeader'
 import SidebarList from './SidebarList'
 import { sidebarTree } from '../../utils/data'
+import SidebarFooter from './SidebarFooter'
 
 const Sidebar = () => {
   return (
@@ -11,6 +12,8 @@ const Sidebar = () => {
         <SidebarHeader />
         {/* Sidebar Panel Body */}
         <SidebarList data={sidebarTree} />
+        {/* Sidebar Footer */}
+        <SidebarFooter />
       </div>
     </div>
   )

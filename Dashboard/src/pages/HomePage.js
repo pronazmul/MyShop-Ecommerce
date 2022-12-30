@@ -9,6 +9,7 @@ import AddProduct from '../components/AddProduct/AddProduct'
 import UpdateProfile from './../components/UpdateProfile/UpdateProfile'
 import UpdatePassword from './../components/UpdatePassword/UpdatePassword'
 import LinkedDeivces from './../components/linkedDevices/LinkedDeivces'
+import CategoryList from '../components/categoryList/CategoryList'
 
 const HomePage = () => {
   const search = useLocation().search
@@ -35,6 +36,8 @@ const HomePage = () => {
         return <ProductList />
       case 'add_products':
         return <AddProduct />
+      case 'all_categories':
+        return <CategoryList />
       case 'update_profile':
         return <UpdateProfile />
       case 'update_password':

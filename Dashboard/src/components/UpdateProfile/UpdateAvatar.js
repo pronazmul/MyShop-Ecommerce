@@ -46,7 +46,7 @@ const UpdateAvatar = () => {
       <div className='flex flex-row items-center space-x-6'>
         <div className='avatar mt-1.5 h-20 w-20'>
           <img
-            className='mask is-squircle'
+            className='mask is-diamond'
             src={avatar ? avatar : user?.avatar}
             alt='avatar'
           />

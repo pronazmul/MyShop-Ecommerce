@@ -1,5 +1,6 @@
 // External Modules:
 const createError = require('http-errors')
+let bcrypt = require('bcrypt')
 
 // Internal Modules:
 const People = require('../models/people')
@@ -64,7 +65,8 @@ const login = async (req, res, next) => {
   try {
     let { email, password } = req.body
     let user = await People.findOne({ email })
-    let isMatch = await user.checkPassword(password)
+    // let isMatch = await user.checkPassword(password)
+    let isMatch = await bcrypt.compare(password, user?.password)
 
     if (user && isMatch) {
       let session = await Session.create({

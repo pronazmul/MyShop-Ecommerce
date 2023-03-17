@@ -4,6 +4,7 @@ const expressRateLimit = require('express-rate-limit')
 const path = require('path')
 const morgan = require('morgan')
 const cors = require('cors')
+require('dotenv').config()
 
 /**
  * @Desc: Global Middlewares
@@ -15,7 +16,7 @@ const cors = require('cors')
 
 const globalMiddlewares = [
   morgan('dev'),
-  cors({ origin: 'http://localhost:3009', credentials: true }),
+  cors({ origin: process.env.CLIENT_URL, credentials: true }),
   // cors(),
   cookieParser(),
   expressRateLimit({

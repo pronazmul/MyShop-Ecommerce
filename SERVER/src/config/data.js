@@ -1,7 +1,7 @@
 const Users = [
   {
     name: 'Nazmul Huda',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'nazmul@gmail.com',
     mobile: '01746000000',
     roles: ['admin'],
@@ -9,7 +9,7 @@ const Users = [
   },
   {
     name: 'Sumit Saha',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'sumit@gmail.com',
     mobile: '01746000001',
     roles: ['admin'],
@@ -17,7 +17,7 @@ const Users = [
   },
   {
     name: 'Jhanker Mahabub',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'jhankar@gmail.com',
     mobile: '01746000002',
     roles: ['admin'],
@@ -25,7 +25,7 @@ const Users = [
   },
   {
     name: 'Brad Traversy',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'traversy@gmail.com',
     mobile: '01746000003',
     roles: ['admin'],
@@ -33,7 +33,7 @@ const Users = [
   },
   {
     name: 'Fayzul Karim',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'fayzul@gmail.com',
     mobile: '01746000004',
     roles: ['admin'],
@@ -41,7 +41,7 @@ const Users = [
   },
   {
     name: 'Sunny Sungha',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'sunny@gmail.com',
     mobile: '01746000005',
     roles: ['admin'],
@@ -49,7 +49,7 @@ const Users = [
   },
   {
     name: 'Adrian Twrag',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'adrian@gmail.com',
     mobile: '01746000006',
     roles: ['user'],
@@ -57,7 +57,7 @@ const Users = [
   },
   {
     name: 'Tanvir Hasan',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'tanvir@gmail.com',
     mobile: '01746000007',
     roles: ['admin'],
@@ -65,7 +65,7 @@ const Users = [
   },
   {
     name: 'Hasin Hayder',
-    password: 'Password@01',
+    password: 'Password@1234',
     email: 'hasin@gmail.com',
     mobile: '01746000008',
     roles: ['user'],

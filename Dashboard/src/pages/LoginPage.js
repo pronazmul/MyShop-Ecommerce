@@ -37,8 +37,8 @@ const LoginPage = () => {
       <LoginHeader />
       <Formik
         initialValues={{
-          email: '',
-          password: '',
+          email: 'nazmul@gmail.com',
+          password: 'Password@1234',
           remember: false,
         }}
         validationSchema={loginSchema}

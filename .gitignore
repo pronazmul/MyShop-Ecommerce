@@ -1,33 +1,6 @@
+node_modules
+**/node_modules
+**/**/node_modules
+**/**/**/node_modules
 
 
-# dependencies
-
-/Dashboard/node_modules
-/SERVER/node_modules
-/FRONTEND/node_modules
-
-
-# Test Files
-/Dashboard/demo.html
-/Dashboard/demo.js
-/Dashboard/demo.css
-
-
-
-# testing
-/coverage
-
-# production
-/Dashboard/build
-/Frontend/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
